@@ -19,10 +19,15 @@ body {
 } 
 
   .button {
-    color: #ff1493;
+    color: #ff1493;task
     border-radius: 2px;
   }
 
   .X {
       display: inline;
   }
+
+  
+
+  /* .completed {
+  } */

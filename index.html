@@ -12,18 +12,22 @@
   <section class="box" ng-controller="TodoController as $ctrl">
     <h2>TODO List</h2>
     <p>A place to store the things you have to do!</p>
-    <input type="text" placeholder="Filter your to-dos">
+  <!-- Filter the list -->
+    <input type="text" ng-model="$ctrl.filterList" placeholder="Filter your to-dos">
       <ol>
         <li ng-repeat="Carly in $ctrl.tasks" ng-class="{'completed': Carly.completed === true}">
-          <button ng-if="Carly.completed === false}">Complete</button>
+          <button ng-if="Carly.completed === false">Complete</button>
           <p>{{ Carly.task }}</p>
           <p class="X">X</p>
         </li>
       </ol>
-      <input type="text" placeholder="Add your to-do"> 
-      <button class="button">Add</button>
-
-  </section>
+<!-- ng-model: used on input element; binds the value of those elements to a property on the $scope object -->
+      <input type="text" ng-model="$ctrl.todo.tasks" placeholder="Add your to-do">
+<!-- ng-click directive: specifies custom behavior when button is clicked (addTask). -->
+      <button class="button" ng-click="$ctrl.addTask($ctrl.todo.tasks)">Add</button>
+<!-- ng-click directive: specifies custom behavior when button is clicked (removeTask). -->
+      <button class="X" ng-click="$ctrl.removeTask($ctrl.remove.tasks)">X</button>
+      </section>
 
   <script src="https://code.angularjs.org/1.6.5/angular.js"></script>
   <script src="app/module/module.js"></script>
